@@ -1,6 +1,6 @@
 # O filtro de filtros de IP
 
-Você acaba de ser encontrado por uma empresa de segurança que faz software para limpar filtros de IP em grandes empresas. Quando um firewall é instalado ele recebe uma lista de endereços IP que devem ser bloqueados por que foram identificados como nocivos. À medida que o tempo passa novos endereços são adicionados ou alterados e de vez em quando é necessário fazer uma limpeza. A lista é simples, ela contém pares de endereços (entre 0 e $2^31$) e todos os endereços entre eles devem ser bloqueados, inclusive os endereços que foram adicionados. Em primeiro lugar está o menor número IP que foi proibido, em seguida vem o último número IP que foi proibido. Os dois endereços são separados por um sinal "-".
+Você acaba de ser encontrado por uma empresa de segurança que faz software para limpar filtros de IP em grandes empresas. Quando um firewall é instalado ele recebe uma lista de endereços IP que devem ser bloqueados por que foram identificados como nocivos. À medida que o tempo passa novos endereços são adicionados ou alterados e de vez em quando é necessário fazer uma limpeza. A lista é simples, ela contém pares de endereços (entre 0 e 2^31) e todos os endereços entre eles devem ser bloqueados, inclusive os endereços que foram adicionados. Em primeiro lugar está o menor número IP que foi proibido, em seguida vem o último número IP que foi proibido. Os dois endereços são separados por um sinal "-".
 
 ```
 793359858-872845434
