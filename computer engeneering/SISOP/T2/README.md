@@ -16,7 +16,7 @@ Dessa forma, seu tamanho pode ser calculado por 512 bytes por setor * 2 setores 
 
 O primeiro cluster é definido como *boot block*, e conter ́a informações referentes ao volume (partição). Por motivos de simplificação, o *boot block* terá o tamanho de 1 cluster (1024 bytes) e não 1 setor (512 bytes) como seria o usual, e deve ser preenchido com o valor 0xbb. A FAT terá um tamanho determinado por 4096 clusters de dados * 2 bytes por entrada (16 bits) = 8192 bytes (8 clusters). Inicialmente a FAT ser ́a inicializada com valores definidos adiante. O diret ́orio root estar ́a localizado logo após a FAT e terá um tamanho de 1 cluster (assim como todos os outros diretórios). O diretório root possui um conjunto de entradas de diretório que podem apontar para outros diretórios ou arquivos (nesse trabalho, ser ̃ao apenas diret ́orios). Ini- cialmente, as entradas de diret ́orio devem estar livres, inicializando-se todas as estruturas com 0x00.
 
-![estrutura_fat](assets/estruturafat.png)
+![estrutura_fat](assets/estrutura_fat.png)
 
 Após a FAT e o diretório root, encontra-se a seção de dados contendo o restante dos clusters. Outros diretórios (e sub-diretórios) são definidos como clusters que possuem diversas entradas de diretório (assim como o diretório root), possuindo uma estrutura apresentada adiante.
 

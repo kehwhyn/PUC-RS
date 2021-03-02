@@ -1,0 +1,27 @@
+# pinos para as entradas e saídas
+NET "clock" LOC = "b8";
+NET "carga" LOC = "h13";
+NET "j1" LOC = "e18";
+NET "j2" LOC = "d18";
+NET "reset" LOC = "b18";
+NET "led_j1" LOC= "j15";
+NET "led_j2" LOC= "j14";
+NET "chaves<0>" LOC = "g18";
+NET "chaves<1>" LOC = "h18";
+NET "chaves<2>" LOC = "k18";
+NET "chaves<3>" LOC = "k17";
+NET "chaves<4>" LOC = "l14";
+NET "chaves<5>" LOC = "l13";
+NET "chaves<6>" LOC = "n17";
+NET "an<0>" LOC = "f17";
+NET "an<1>" LOC = "h17";
+NET "an<2>" LOC = "c18";
+NET "an<3>" LOC = "f15";
+NET "dec_ddp<0>" LOC = "c17" ;
+NET "dec_ddp<1>" LOC = "h14" ;
+NET "dec_ddp<2>" LOC = "j17" ;
+NET "dec_ddp<3>" LOC = "g14" ;
+NET "dec_ddp<4>" LOC = "d16" ;
+NET "dec_ddp<5>" LOC = "d17" ;
+NET "dec_ddp<6>" LOC = "f18" ;
+NET "dec_ddp<7>" LOC = "l18" ;
