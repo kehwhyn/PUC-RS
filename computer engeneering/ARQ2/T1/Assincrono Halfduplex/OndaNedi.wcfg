@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/nedisonn/Downloads/T1Arq1/Assincrono_halfDuplex/assincrono_halfduplex/tbAssincrono_isim_beh2.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="definicoesrecepcaoassincronacpu" />
+            <top_module name="definicoesrecepcaoassincronaper" />
+            <top_module name="definicoestransmissaoassincronacpu" />
+            <top_module name="definicoestransmissaoassincronaper" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="tbassincrono" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="49" />
+   <wvobject fp_name="/tbassincrono/MaquinaCPU/data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ff00</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider62" type="divider">
+      <obj_property name="label">CPU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaCPU/send_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">send_per</obj_property>
+      <obj_property name="ObjectShortName">send_per</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaCPU/contador" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">contador[7:0]</obj_property>
+      <obj_property name="ObjectShortName">contador[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaCPU/ack_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ack_per</obj_property>
+      <obj_property name="ObjectShortName">ack_per</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaCPU/receive_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">receive_per</obj_property>
+      <obj_property name="ObjectShortName">receive_per</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaCPU/flag" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flag</obj_property>
+      <obj_property name="ObjectShortName">flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaCPU/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaCPU/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaCPU/dado" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dado[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dado[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider62" type="divider">
+      <obj_property name="label">I/F CPU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ff00</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/send_out_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">send_out_per</obj_property>
+      <obj_property name="ObjectShortName">send_out_per</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ff00</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/receive_in_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">receive_in_cpu</obj_property>
+      <obj_property name="ObjectShortName">receive_in_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/ack_in_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ack_in_cpu</obj_property>
+      <obj_property name="ObjectShortName">ack_in_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/accept_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">accept_per</obj_property>
+      <obj_property name="ObjectShortName">accept_per</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/send_in_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">send_in_per</obj_property>
+      <obj_property name="ObjectShortName">send_in_per</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/receive_out_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">receive_out_cpu</obj_property>
+      <obj_property name="ObjectShortName">receive_out_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/ack_out_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ack_out_cpu</obj_property>
+      <obj_property name="ObjectShortName">ack_out_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/manda" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">manda</obj_property>
+      <obj_property name="ObjectShortName">manda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/recebe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">recebe</obj_property>
+      <obj_property name="ObjectShortName">recebe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/estadotx" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">estadotx</obj_property>
+      <obj_property name="ObjectShortName">estadotx</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/estadorx" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">estadorx</obj_property>
+      <obj_property name="ObjectShortName">estadorx</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/regdata_trans" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regdata_trans[7:0]</obj_property>
+      <obj_property name="ObjectShortName">regdata_trans[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfaceCPU/regdata_rec" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regdata_rec[7:0]</obj_property>
+      <obj_property name="ObjectShortName">regdata_rec[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider62" type="divider">
+      <obj_property name="label">I/F Periferico</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ff00</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/accept_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">accept_cpu</obj_property>
+      <obj_property name="ObjectShortName">accept_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/receive_in_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">receive_in_per</obj_property>
+      <obj_property name="ObjectShortName">receive_in_per</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/send_out_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">send_out_cpu</obj_property>
+      <obj_property name="ObjectShortName">send_out_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/ack_in_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ack_in_per</obj_property>
+      <obj_property name="ObjectShortName">ack_in_per</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/receive_out_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">receive_out_per</obj_property>
+      <obj_property name="ObjectShortName">receive_out_per</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/send_in_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">send_in_cpu</obj_property>
+      <obj_property name="ObjectShortName">send_in_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/recebe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">recebe</obj_property>
+      <obj_property name="ObjectShortName">recebe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/manda" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">manda</obj_property>
+      <obj_property name="ObjectShortName">manda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/ack_out_per" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ack_out_per</obj_property>
+      <obj_property name="ObjectShortName">ack_out_per</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/estadorx" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">estadorx</obj_property>
+      <obj_property name="ObjectShortName">estadorx</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/estadotx" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">estadotx</obj_property>
+      <obj_property name="ObjectShortName">estadotx</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/regdata_trans" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regdata_trans[7:0]</obj_property>
+      <obj_property name="ObjectShortName">regdata_trans[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/InterfacePeriferico/regdata_rec" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regdata_rec[7:0]</obj_property>
+      <obj_property name="ObjectShortName">regdata_rec[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider62" type="divider">
+      <obj_property name="label">Periferico</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaPeriferico/data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ff00</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaPeriferico/send_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">send_cpu</obj_property>
+      <obj_property name="ObjectShortName">send_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaPeriferico/ack_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ack_cpu</obj_property>
+      <obj_property name="ObjectShortName">ack_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaPeriferico/flag" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flag</obj_property>
+      <obj_property name="ObjectShortName">flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaPeriferico/dado" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dado[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dado[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaPeriferico/receive_cpu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">receive_cpu</obj_property>
+      <obj_property name="ObjectShortName">receive_cpu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbassincrono/MaquinaPeriferico/contador" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">contador[7:0]</obj_property>
+      <obj_property name="ObjectShortName">contador[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
