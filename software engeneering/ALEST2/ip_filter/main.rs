@@ -1,14 +1,14 @@
 use std::{
+    collections::VecDeque,
     fs::File,
+    io::{BufRead, BufReader, Lines, Result},
     path::Path,
     time::Instant,
-    collections::VecDeque,
-    io::{BufRead, BufReader, Lines, Result}
 };
 
 const HI: usize = 1;
 const LO: usize = 0;
-const FILES_PATH: [&str;13] = [
+const FILES_PATH: [&str; 13] = [
     "./ip_list_filter_test_cases/casoenunciado.txt",
     "./ip_list_filter_test_cases/cohen01.txt",
     "./ip_list_filter_test_cases/cohen02.txt",
@@ -21,9 +21,9 @@ const FILES_PATH: [&str;13] = [
     "./ip_list_filter_test_cases/cohen09.txt",
     "./ip_list_filter_test_cases/cohen10.txt",
     "./ip_list_filter_test_cases/cohen11.txt",
-    "./ip_list_filter_test_cases/cohen12.txt"
+    "./ip_list_filter_test_cases/cohen12.txt",
 ];
-const FILES_NAME: [&str;13] = [
+const FILES_NAME: [&str; 13] = [
     "casoenunciado.txt",
     "cohen01.txt",
     "cohen02.txt",
@@ -36,42 +36,41 @@ const FILES_NAME: [&str;13] = [
     "cohen09.txt",
     "cohen10.txt",
     "cohen11.txt",
-    "cohen12.txt"
+    "cohen12.txt",
 ];
 
 fn main() {
     let args: Vec<String> = env::args().collect();
     if Path::new(args[0]).is_file() {
         process_single_file(args[0]);
-    }
-    else {
+    } else {
         run_all_files(args[0]);
     }
 }
 
-fn menu () -> usize {
+fn menu() -> usize {
     show_menu_options();
     let option = read_user_input();
     match option {
         1 => {
             choose_one_file();
-        },
+        }
         2 => {
             run_all_files();
-        },
+        }
         3 => {
             println!();
             println!(">>> Bye ^_~");
-        },
+        }
         _ => {
             println!();
             println!("Opção inválida, tente novamente.");
-        },
+        }
     }
     option
 }
 
-fn show_menu_options () {
+fn show_menu_options() {
     println!();
     println!("1 - Executar um único arquivo.");
     println!("2 - Executar todos os arquivos.");
@@ -90,7 +89,7 @@ fn choose_one_file() {
     }
 }
 
-fn show_file_options () {
+fn show_file_options() {
     println!();
     println!("Estes são os arquivos disponiveis:");
     for (index, file_name) in FILES_NAME.iter().enumerate() {
@@ -98,7 +97,7 @@ fn show_file_options () {
     }
 }
 
-fn read_user_input () -> usize {
+fn read_user_input() -> usize {
     println!();
     println!("Digite o número da sua opção:");
 
@@ -110,18 +109,16 @@ fn read_user_input () -> usize {
     }
 }
 
-fn process_single_file (chosen_file: usize) {
+fn process_single_file(chosen_file: usize) {
     let start = Instant::now();
-    let answer = least_possible_list_size(
-        get_sorted_ip_list(file_path)
-    );
+    let answer = least_possible_list_size(get_sorted_ip_list(file_path));
     let duration = start.elapsed();
     println!();
     println!("Time to process file: {:?}", duration);
     println!(">>> {} => {}", file_path, answer);
 }
 
-fn get_sorted_ip_list (file_path: &str) -> Vec<Vec<i32>> {
+fn get_sorted_ip_list(file_path: &str) -> Vec<Vec<i32>> {
     let mut ip_list = Vec::<Vec<i32>>::new();
     let file_path = Path::new(file_path);
     for line in read_lines(file_path).unwrap() {
@@ -131,21 +128,21 @@ fn get_sorted_ip_list (file_path: &str) -> Vec<Vec<i32>> {
                 .collect::<Vec<&str>>()
                 .into_iter()
                 .map(|string| string.parse::<i32>().unwrap())
-                .collect()
+                .collect(),
         );
     }
     ip_list.sort();
     ip_list
 }
 
-fn read_lines (filename: &Path) -> Result<Lines<BufReader<File>>> {
+fn read_lines(filename: &Path) -> Result<Lines<BufReader<File>>> {
     let file = File::open(filename).expect("Error opening file.");
     Ok(BufReader::new(file).lines())
 }
 
-fn least_possible_list_size (ip_list: Vec<Vec<i32>>) -> usize {
+fn least_possible_list_size(ip_list: Vec<Vec<i32>>) -> usize {
     let mut blocked_ranges = VecDeque::<Vec<i32>>::new();
-    
+
     for ip_pair in ip_list {
         if blocked_ranges.is_empty() {
             blocked_ranges.push_back(ip_pair);
@@ -158,18 +155,17 @@ fn least_possible_list_size (ip_list: Vec<Vec<i32>>) -> usize {
     blocked_ranges.len()
 }
 
-fn change_higher_value (interval_1: &Vec<i32>, interval_2: &Vec<i32>) -> bool {
+fn change_higher_value(interval_1: &Vec<i32>, interval_2: &Vec<i32>) -> bool {
     return interval_2[LO] < interval_1[LO]
         && interval_1[LO] < interval_2[HI]
         && interval_2[HI] <= interval_1[HI];
 }
 
-fn contained (interval_1: &Vec<i32>, interval_2: &Vec<i32>) -> bool {
-    return interval_2[LO] < interval_1[LO] 
-        && interval_1[HI] < interval_2[HI];
+fn contained(interval_1: &Vec<i32>, interval_2: &Vec<i32>) -> bool {
+    return interval_2[LO] < interval_1[LO] && interval_1[HI] < interval_2[HI];
 }
 
-fn run_all_files () {
+fn run_all_files() {
     let start = Instant::now();
     for chosen_file in 0..13 {
         process_single_file(chosen_file);

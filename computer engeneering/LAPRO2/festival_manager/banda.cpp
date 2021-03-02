@@ -10,8 +10,8 @@ Banda::Banda(string nome, string estilo)
     this->estilo = estilo;
     nIntegrantes = 0;
 }
- 
-Banda::~Banda(){}
+
+Banda::~Banda() {}
 
 void Banda::add_integrantes(Musico no)
 {
@@ -22,7 +22,7 @@ string Banda::get_nome()
 {
     return this->nome;
 }
- 
+
 string Banda::get_estilo()
 {
     return this->estilo;
@@ -35,5 +35,5 @@ int Banda::get_nintegrantes()
 
 Artista Banda::get_integrantes(int i)
 {
-	return integrantes[i];
+    return integrantes[i];
 }

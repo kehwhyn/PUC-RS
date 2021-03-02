@@ -6,12 +6,12 @@
 
 AtracaoAbstrata::AtracaoAbstrata(string titulo, string horario, int duracao)
 {
-  	  this->titulo = titulo;
-  	  this->horario = horario;
-  	  this->duracao = duracao;
+	this->titulo = titulo;
+	this->horario = horario;
+	this->duracao = duracao;
 }
 
-AtracaoAbstrata::~AtracaoAbstrata(){}
+AtracaoAbstrata::~AtracaoAbstrata() {}
 
 string AtracaoAbstrata::get_artistas()
 {
@@ -19,7 +19,7 @@ string AtracaoAbstrata::get_artistas()
 
 string AtracaoAbstrata::get_titulo()
 {
-    return this->titulo;
+	return this->titulo;
 }
 
 int AtracaoAbstrata::get_duracao()

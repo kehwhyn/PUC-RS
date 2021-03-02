@@ -10,8 +10,8 @@
 //Só tem o ".h" pq n tem muito que implementar pois herda tudo do pai
 class Figurante : public Artista
 {
-	public:
-  	  Figurante(string nome = "ariel", int idade = 24) : Artista(nome, idade){}
-  	  ~Figurante(){}
+public:
+	Figurante(string nome = "ariel", int idade = 24) : Artista(nome, idade) {}
+	~Figurante() {}
 };
 #endif

@@ -1,16 +1,19 @@
 #include "ator.h"
 
-Ator::Ator(string n) {
+Ator::Ator(string n)
+{
 	nome = n;
 }
 
-Ator::~Ator(){}
+Ator::~Ator() {}
 
-string Ator::get_nome() {
+string Ator::get_nome()
+{
 	return nome;
 }
 
-string Ator::toString() {
+string Ator::toString()
+{
 	stringstream exibir;
 
 	exibir << "Nome:" << nome << endl;

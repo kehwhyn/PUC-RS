@@ -127,5 +127,5 @@ begin
 		"0111000" when others; --F
 	-- and the decimal point
 	dec_ddp(0) <= selected_dig(0);
-											  
+
 end dspl_drv;

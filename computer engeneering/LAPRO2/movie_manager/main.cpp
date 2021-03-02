@@ -7,25 +7,24 @@
 #define LF 400
 #define LD 25
 
-void menu(int op, Filme As_Aventuras_de_LAPROII[LF], Ator Yasmin[LA], Diretor Kevin[LD], int &sla, int &conta, int &contd);//Menu do programa principal
-void consulta_filme(string n); //Exibe os dados do filme pedido
-void cadastrar_filme(string n, Filme As_Aventuras_de_LAPROII[LF], Ator Yasmin[LA], Diretor Kevin[LD], int &sla, int &conta, int &contd);//Nome diz muita coisa
-void enche_tudo(Filme As_Aventuras_de_LAPROII[LF], Ator Yasmin[LA], Diretor Kevin[LD], int &sla, int &conta, int &contd);//Pega informacoes dos arquivos
+void menu(int op, Filme As_Aventuras_de_LAPROII[LF], Ator Yasmin[LA], Diretor Kevin[LD], int &sla, int &conta, int &contd);				 //Menu do programa principal
+void consulta_filme(string n);																											 //Exibe os dados do filme pedido
+void cadastrar_filme(string n, Filme As_Aventuras_de_LAPROII[LF], Ator Yasmin[LA], Diretor Kevin[LD], int &sla, int &conta, int &contd); //Nome diz muita coisa
+void enche_tudo(Filme As_Aventuras_de_LAPROII[LF], Ator Yasmin[LA], Diretor Kevin[LD], int &sla, int &conta, int &contd);				 //Pega informacoes dos arquivos
 //void guarda_tudo(Filme As_Aventuras_de_LAPROII[LF], Ator Yasmin[LA], Diretor Kevin[LD], int sla, int conta, int contd);//Guarda alteracoes nos arquivos
-
 
 /***************************************	Programa principal 	*************************************************************/
 int main()
 {
-	Ator Yasmin[45]; //Vetor de atores
-	Diretor Kevin[25]; //Vetor de diretores
+	Ator Yasmin[45];					//Vetor de atores
+	Diretor Kevin[25];					//Vetor de diretores
 	Filme As_Aventuras_de_LAPROII[300]; //Vetor de filmes
-	int op, sla, conta, contd, i; //Op do menu, sla/conta/contd variaveis de controle
-    
+	int op, sla, conta, contd, i;		//Op do menu, sla/conta/contd variaveis de controle
+
 	sla = conta = contd = op = 0; //Define as variaveis
-    
+
 	srand(time(NULL)); //Alimenta a semente
-    
+
 	//enche_tudo(As_Aventuras_de_LAPROII, Yasmin, Kevin, sla, conta, contd); //Preenche as classes
 	ifstream arqEntrada;
 	string ata, ano, aux;
@@ -33,91 +32,93 @@ int main()
 	//0 = procura sustenido
 	//1 = está no nome
 	//2 = está pegando a lista
-   	 
+
 	arqEntrada.open("BD_Atores.txt", ios::in);
-    	 
+
 	do
 	{
-    	getline(arqEntrada, ata);
-               	 
-    	if(ata[0] == '#')
-    	{
-        	estado = 1;
-        	continue;
-    	}
-   	 
-    	if(estado == 1){
-        	Yasmin[conta] = Ator(ata);
-        	conta++;
-        	estado = 2;
-        	continue;
-    	}
-   	 
-    	if(estado == 2)    
-        	if(ata.size() > 2)
-        	{
-            	aux = ata.substr(2, ata.size() - 8);
-            	ano = ata.substr(ata.size() - 5, 4);
-        	}
-                  	 
-    	As_Aventuras_de_LAPROII[sla] = Filme(aux, ano);
-    	As_Aventuras_de_LAPROII[sla].alterar_elenco(Yasmin[conta-1]);
-    	sla++;
-	}while(!arqEntrada.eof());
-    
-	if(arqEntrada.bad()|| !arqEntrada.eof())
+		getline(arqEntrada, ata);
+
+		if (ata[0] == '#')
+		{
+			estado = 1;
+			continue;
+		}
+
+		if (estado == 1)
+		{
+			Yasmin[conta] = Ator(ata);
+			conta++;
+			estado = 2;
+			continue;
+		}
+
+		if (estado == 2)
+			if (ata.size() > 2)
+			{
+				aux = ata.substr(2, ata.size() - 8);
+				ano = ata.substr(ata.size() - 5, 4);
+			}
+
+		As_Aventuras_de_LAPROII[sla] = Filme(aux, ano);
+		As_Aventuras_de_LAPROII[sla].alterar_elenco(Yasmin[conta - 1]);
+		sla++;
+	} while (!arqEntrada.eof());
+
+	if (arqEntrada.bad() || !arqEntrada.eof())
 	{
-    	cout << "Erro fatal!" << endl;
-    	exit(1);  // Aborta programa
+		cout << "Erro fatal!" << endl;
+		exit(1); // Aborta programa
 	}
 
 	arqEntrada.close(); //Ate aqui ta certo
-    
+
 	arqEntrada.open("BD_Diretores.txt", ios::in);
-   	 
-   do
+
+	do
 	{
-    	getline(arqEntrada, ata);
-               	 
-    	if(ata[0] == '#')
-    	{
-        	estado = 1;
-        	continue;
-    	}
-   	 
-    	if(estado == 1){
-        	Kevin[contd] = Diretor(ata);
-        	contd++;
-        	estado = 2;
-        	continue;
-    	}
-   	 
-    	if(estado == 2)    
-        	if(ata.size() > 2)
-        	{
-            	aux = ata.substr(2, ata.size() - 8);
-            	ano = ata.substr(ata.size() - 5, 4);
-        	}
-                  	 
-    	As_Aventuras_de_LAPROII[sla] = Filme(aux, ano);
-    	sla++;
-	}while(!arqEntrada.eof());
-    
-	if(arqEntrada.bad()|| !arqEntrada.eof())
+		getline(arqEntrada, ata);
+
+		if (ata[0] == '#')
+		{
+			estado = 1;
+			continue;
+		}
+
+		if (estado == 1)
+		{
+			Kevin[contd] = Diretor(ata);
+			contd++;
+			estado = 2;
+			continue;
+		}
+
+		if (estado == 2)
+			if (ata.size() > 2)
+			{
+				aux = ata.substr(2, ata.size() - 8);
+				ano = ata.substr(ata.size() - 5, 4);
+			}
+
+		As_Aventuras_de_LAPROII[sla] = Filme(aux, ano);
+		sla++;
+	} while (!arqEntrada.eof());
+
+	if (arqEntrada.bad() || !arqEntrada.eof())
 	{
-    	cout << "Erro fatal!" << endl;
-    	exit(1);  // Aborta programa
+		cout << "Erro fatal!" << endl;
+		exit(1); // Aborta programa
 	}
 
 	arqEntrada.close();
-    
-	for(i = 0; i < LF; i++)
-    	cout << As_Aventuras_de_LAPROII[i].toString();
-    
+
+	for (i = 0; i < LF; i++)
+		cout << As_Aventuras_de_LAPROII[i].toString();
+
 	//menu(op, As_Aventuras_de_LAPROII, Yasmin, Kevin, sla, conta, contd); //Menu do programa
 
 	//guarda_tudo(As_Aventuras_de_LAPROII, Yasmin, Kevin, sla, conta, contd); //Escreve todas as alterações no arquivo
-    
+
 	return 0; //Termina o programa
 }
 
@@ -248,22 +249,22 @@ int main()
 void cadastrar_filme(string n, Filme As_Aventuras_de_LAPROII[LF], Ator Yasmin[LA], Diretor Kevin[LD], int &sla, int &conta, int &contd)
 {
 	string aa, ano;
-    
-	ano = 2017 - (rand()%30 + 1); //Gera um ano aleatório
-    
-	sla++; //Incrementa a variavel de controle
-	As_Aventuras_de_LAPROII[sla] = Filme(n,ano); //Adiciona um novo filme
-    
+
+	ano = 2017 - (rand() % 30 + 1); //Gera um ano aleatório
+
+	sla++;										  //Incrementa a variavel de controle
+	As_Aventuras_de_LAPROII[sla] = Filme(n, ano); //Adiciona um novo filme
+
 	cout << "Qual diretor deseja adicionar?" << endl; //Pede o nome do novo diretor
-	cin >> aa; //Le
-	contd++; //Incrementa variavel de controle dos diretores
-	Kevin[contd] = Diretor(aa); // Salva o novo diretor
-    
+	cin >> aa;										  //Le
+	contd++;										  //Incrementa variavel de controle dos diretores
+	Kevin[contd] = Diretor(aa);						  // Salva o novo diretor
+
 	cout << "Qual ator deseja adicionar?" << endl; //Pede o nome do novo diretor
-	cin >> aa; //Le
-	conta++; //Incrementa variavel de controle dos atores
-	Yasmin[conta] = Ator(aa); //Salva o novo ator
-   	 
+	cin >> aa;									   //Le
+	conta++;									   //Incrementa variavel de controle dos atores
+	Yasmin[conta] = Ator(aa);					   //Salva o novo ator
+
 	As_Aventuras_de_LAPROII[sla].alterar_diretor(Kevin[contd]); //Adiciona o diretor ao filme criado
 	As_Aventuras_de_LAPROII[sla].alterar_elenco(Yasmin[conta]); //Adiciona o ator ao filme criado
 }

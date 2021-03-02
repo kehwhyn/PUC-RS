@@ -12,14 +12,15 @@ using namespace std;
 //Tudo bem intuitivo
 class Artista
 {
-	private:
-  	  string nome;
-  	  int idade;
-	public:
-  	  Artista(string nome = "ariel", int idade = 24);
-  	  ~Artista();
-  	  string get_nome();
-  	  int get_idade();
-  	  string toString();
+private:
+	string nome;
+	int idade;
+
+public:
+	Artista(string nome = "ariel", int idade = 24);
+	~Artista();
+	string get_nome();
+	int get_idade();
+	string toString();
 };
 #endif

@@ -8,40 +8,34 @@ from pathlib import Path
 from collections import deque
 from contextlib import contextmanager
 
-
-
 LO = 0
 HI = 1
-
 
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
         prog="main",
         usage="%(prog)s [options] path/to/file_or_directory",
-        description="filters an IP filter from a file or directory"
-    )
+        description="filters an IP filter from a file or directory")
 
     parser.add_argument(
-        "-d", "--directory",
+        "-d",
+        "--directory",
         type=str,
         metavar='path',
-        help="path to the directory that contains the test files"
-    )
-    
-    parser.add_argument(
-        "-f", "--file",
-        type=str, 
-        metavar='path',
-        help="path to the desired test file"
-    )
+        help="path to the directory that contains the test files")
+
+    parser.add_argument("-f",
+                        "--file",
+                        type=str,
+                        metavar='path',
+                        help="path to the desired test file")
 
     if len(sys.argv) == 1:
         parser.print_help()
         sys.exit(1)
-    
-    return parser.parse_args()
 
+    return parser.parse_args()
 
 
 @contextmanager
@@ -53,7 +47,6 @@ def timeit_context(name):
     print()
 
 
-
 def main(args):
     if args.file:
         process_single_file(Path(args.file))
@@ -61,19 +54,15 @@ def main(args):
         run_all_files(Path(args.directory))
 
 
-
 def process_single_file(file_path):
     with timeit_context(file_path.name):
-        answer = least_possible_list_size(
-            get_sorted_ip_list(file_path)
-        )
+        answer = least_possible_list_size(get_sorted_ip_list(file_path))
         print(">>>", file_path.name, "=>", answer)
-
 
 
 def least_possible_list_size(ip_list):
     blocked_ips = deque([ip_list.pop(0)])
-    
+
     for ip_pair in ip_list:
         last_added = len(blocked_ips) - 1
 
@@ -86,24 +75,18 @@ def least_possible_list_size(ip_list):
     return len(blocked_ips)
 
 
-
 def get_sorted_ip_list(chosen_file_path):
     with open(chosen_file_path, "r") as file:
-        return sorted(
-                [int(value) for value in line.strip().split("-")]
-                for line in file
-            )
-
+        return sorted([int(value) for value in line.strip().split("-")]
+                      for line in file)
 
 
 def change_higher_value(pair_1, pair_2):
     return pair_2[LO] < pair_1[LO] < pair_2[HI] <= pair_1[HI]
 
 
-
 def contained(pair_1, pair_2):
     return pair_2[LO] < pair_1[LO] < pair_1[HI] < pair_2[HI]
-
 
 
 def run_all_files(directory):

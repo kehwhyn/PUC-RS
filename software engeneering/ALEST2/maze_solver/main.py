@@ -79,24 +79,15 @@ def process_one_file(chosen_file: int) -> None:
         maze: [str] = map_maze(VALUES[chosen_file][FILE_PATH])
         hero: int = maze.index('A')
         villain: int = maze.index('B')
-        answer: int = shortest_path(
-            maze,
-            VALUES[chosen_file][OFFSET],
-            hero,
-            villain
-        )
+        answer: int = shortest_path(maze, VALUES[chosen_file][OFFSET], hero,
+                                    villain)
         print()
         print(f'>>> {file_name} => {answer}')
 
 
 def map_maze(file_path: str) -> [str]:
     with open(file_path, 'r') as file:
-        tmp: [str] = [
-            char
-            for line in file
-            for char in line
-            if char != '\n'
-        ]
+        tmp: [str] = [char for line in file for char in line if char != '\n']
     return tmp
 
 
@@ -106,7 +97,8 @@ def shortest_path(maze: [str], offset: int, source: int, destiny: int) -> int:
     maze[source] = 0
     while next_pos != destiny:
         curr_pos: int = queue.popleft()
-        for next_pos in (curr_pos - offset, curr_pos - 1, curr_pos + offset, curr_pos + 1):
+        for next_pos in (curr_pos - offset, curr_pos - 1, curr_pos + offset,
+                         curr_pos + 1):
             if maze[next_pos] != '#' and type(maze[next_pos]) is not int:
                 maze[next_pos] = maze[curr_pos] + 1
                 queue.append(next_pos)

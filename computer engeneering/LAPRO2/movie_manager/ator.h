@@ -6,14 +6,15 @@
 #include <sstream>
 using namespace std;
 
-class Ator {
-	private:
-    	string nome;
+class Ator
+{
+private:
+	string nome;
 
-	public:
-    	Ator(string n = "Sem nome");
-    	~Ator();
-    	string get_nome();
-    	string toString();
+public:
+	Ator(string n = "Sem nome");
+	~Ator();
+	string get_nome();
+	string toString();
 };
 #endif

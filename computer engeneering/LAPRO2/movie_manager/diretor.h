@@ -6,14 +6,15 @@
 #include <sstream>
 using namespace std;
 
-class Diretor {
-	private:
-    	string nome;
-   	 
-	public:
-    	Diretor(string nome = "sem nome");
-    	~Diretor();
-    	string get_nome();
-    	string toString();
+class Diretor
+{
+private:
+	string nome;
+
+public:
+	Diretor(string nome = "sem nome");
+	~Diretor();
+	string get_nome();
+	string toString();
 };
 #endif
