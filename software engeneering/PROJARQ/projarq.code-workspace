@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "ExMotivacaoPadroes"
+		},
+		{
+			"path": "ExMotivacaoPadroesGabarito"
+		},
+		{
+			"path": "ClassesParaExPrimeirosPadroes"
+		},
+		{
+			"path": "CtrlCorredor"
+		},
+		{
+			"path": "T1"
+		},
+		{
+			"path": "projarq-tf"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}

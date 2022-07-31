@@ -11,6 +11,7 @@ Formação dos grupos: Os grupos deverão ser de 2 a 3 alunos. Não se aceita tr
 Implementar uma função recursiva para computar se um dado número é primo. O algoritmo básico de pesquisa binária a usar é dado abaixo, como uma função escrita em C:
 
 ```c
+
 boolean ehprimo(int k, int n) {
    if (k >= n)			        // Tem algo a ser feito?
       return true;		        // Senão, retorna sim, número é primo
@@ -24,12 +25,14 @@ boolean ehprimo(int k, int n) {
 ### 3.2
 
 Assuma que k inicialmente é sempre 2 e teste as chamadas:
+
 ```c
-ehprimo(2,1);		# Retorna true
-ehprimo(2,7);		# Retorna true
-ehprimo(2,6);		# Retorna true
-ehprimo(2,7919);	# Retorna true
-``` 
+
+ehprimo(2,1);      # Retorna true
+ehprimo(2,7);      # Retorna true
+ehprimo(2,6);      # Retorna true
+ehprimo(2,7919);   # Retorna true
+```
 
 ### 3.3
 

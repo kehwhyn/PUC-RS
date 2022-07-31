@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "HelloWorld"
+		},
+		{
+			"path": "introJUnit"
+		},
+		{
+			"path": "tarefas_chocolate"
+		},
+		{
+			"path": "Exercicio8"
+		},
+		{
+			"path": "DepositoCombustivel"
+		},
+		{
+			"name": "trabalho_final",
+			"path": "trabalho_final"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}

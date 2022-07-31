@@ -1,0 +1,57 @@
+[
+    {
+        "id": 6,
+        "itens": [
+            {
+                "id": 7,
+                "produto": {
+                    "id": 4,
+                    "nome": "Lava roupa",
+                    "preco": 3350.0
+                },
+                "quantidadeDisponivel": 11,
+                "produtoId": 4
+            },
+            {
+                "id": 9,
+                "produto": {
+                    "id": 1,
+                    "nome": "Geladeira",
+                    "preco": 2500.0
+                },
+                "quantidadeDisponivel": 10,
+                "produtoId": 1
+            },
+            {
+                "id": 8,
+                "produto": {
+                    "id": 3,
+                    "nome": "Lava louça",
+                    "preco": 4300.0
+                },
+                "quantidadeDisponivel": 7,
+                "produtoId": 3
+            },
+            {
+                "id": 10,
+                "produto": {
+                    "id": 2,
+                    "nome": "Fogao",
+                    "preco": 1200.0
+                },
+                "quantidadeDisponivel": 0,
+                "produtoId": 2
+            },
+            {
+                "id": 11,
+                "produto": {
+                    "id": 5,
+                    "nome": "Aspirador de pó",
+                    "preco": 780.0
+                },
+                "quantidadeDisponivel": 22,
+                "produtoId": 5
+            }
+        ]
+    }
+]

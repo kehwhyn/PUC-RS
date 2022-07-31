@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  servVenda:
+    depends_on:
+      - "rabbitmq"
+    ports:
+      - "8081:8080"
+    build: ../sistema-venda
+    image: "venda:latest"
+  msVenda:
+    depends_on:
+      - "rabbitmq"
+    ports:
+      - "8082:8080"
+    build: ../msvenda
+    image: "msvendas:latest"
+  msEstoque:
+    depends_on:
+      - "rabbitmq"
+    ports:
+      - "8083:8080"
+    build: ../msestoque
+    image: "msestoque:latest" 
+  gateway:
+    depends_on:
+      - "servVenda"
+      - "msVenda"
+    ports:
+      - "8080:8080"
+    build: ../gateway
+    image: "gateway:latest"
+ 

@@ -184,7 +184,7 @@ int main(void)
     HAL_ADC_Stop(&hadc);
 		//leitura da tensao
 		
-      Xv = leitura*0.000805; //leitura*3,3/4095  tensão
+      Xv = leitura*0.000805; //leitura*3,3/4095  tensï¿½o
       aonde = no_LCD;			
 			if (leitura < 1000) LCD_GOTO(13,0);
 			else LCD_GOTO(12,0);

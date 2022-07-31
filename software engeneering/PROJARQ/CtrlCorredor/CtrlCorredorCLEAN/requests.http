@@ -1,0 +1,14 @@
+GET http://localhost:8080/ctrlCorridas/corredor
+
+###
+
+GET http://localhost:8080/ctrlCorridas/eventos
+
+
+###
+
+GET http://localhost:8080/ctrlCorridas/estatisticas?distancia=5
+
+### 
+
+GET http://localhost:8080/ctrlCorridas/aumentoPerformance?distancia=5&ano=2019
